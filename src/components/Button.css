@@ -1,0 +1,17 @@
+button {
+  padding: 8px 20px;
+  font-weight: 500;
+  background: #ddd;
+  border-radius: 15px;
+  border: none;
+  font-size: var(--size-statistics);
+  white-space: nowrap;
+  cursor: pointer;
+  z-index: 1000;
+  width: var(--width-button);
+}
+
+button:hover {
+  background: #f0bfa3;
+  transition: all 0.2s ease-in-out;
+}
