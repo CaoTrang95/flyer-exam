@@ -6,15 +6,14 @@
 
 .video-container {
   width: var(--size-video-container);
-  min-width: 600px;
-  padding-top: 30px;
+  padding-top: var(--padding-guide);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: var(--gap-video-text-guide);
   flex-direction: column;
   position: absolute;
-  top: 50%;
+  top: var(--top-video-container);
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -30,17 +29,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
+  width: var(--size-content-video);
   position: relative;
-  /* padding: 0px 30px 30px 30px; */
   border-radius: 15px;
-  margin-bottom: 120px;
+  margin-bottom: var(--margin-bottom-video);
   overflow: hidden;
 }
 
 .wrap-guide {
-  border: 2px solid orange;
-  border-radius: 15px;
+  border: 0.125rem solid orange;
+  border-radius: 0.9rem;
   padding: 1.2%;
   background-color: #eee;
   align-self: center;
@@ -51,7 +49,6 @@
   text-transform: uppercase;
   font-weight: 700;
   text-align: center;
-  /* font-size: clamp(0.25em, min(1.8vh, 1.2vw), 1em); */
   font-size: var(--size-title-guide);
 }
 
@@ -90,7 +87,7 @@ div video {
 
 .play {
   position: absolute;
-  top: calc(50% - 15px);
+  top: calc(50%);
   font-size: 4em;
   color: white;
   transform: translateY(-50%);
@@ -100,8 +97,8 @@ div video {
 .icon-play {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  width: 90px;
-  height: 90px;
+  width: var(--play-button-size);
+  height: var(--play-button-size);
   align-items: center;
   z-index: 100;
   color: white;
@@ -134,8 +131,16 @@ div video {
 
 .bee {
   position: absolute;
-  width: 100px;
+  width: var(--bee-width);
   /* animation: fly 20s linear infinite; */
+  transition: transform 5s linear;
+  z-index: 100;
+}
+
+.meo {
+  position: absolute;
+  right: 0;
+  width: var(--bee-width);
   transition: transform 5s linear;
   z-index: 100;
 }
@@ -166,3 +171,8 @@ div video {
     transform: translate(0, 0) rotate(0deg);
   }
 }
+/* #target {
+  width: 80%;
+  height: 80%;
+  position: relative;
+} */

@@ -9,6 +9,7 @@ import "./Exam.css";
 import bee_hi from "../assets/images/bee_hi.png";
 import bee_read from "../assets/images/bee_read.png";
 import bee_choose from "../assets/images/bee_choose.png";
+import meo from "../assets/images/meo.png";
 import bg from "../assets/images/bg.png";
 import bg_video from "../assets/images/bg-video.png";
 import play_button from "../assets/images/play-button.png";
@@ -21,6 +22,7 @@ function Exam() {
   const pauseTimes = questions.map((question) => question.time);
   const playerRef = useRef(null);
   const beeRef = useRef(null);
+  const meoRef = useRef(null);
   const [currentStopIndex, setCurrentStopIndex] = useState(0);
 
   useEffect(() => {
@@ -67,22 +69,40 @@ function Exam() {
   useEffect(() => {
     const target = document.getElementById("target");
     const targetRect = target.getBoundingClientRect();
+
     let bounceInterval;
 
-    const targetX = targetRect.left - 120;
-    const targetY = targetRect.top - targetRect.height / 2 - 50;
+    var widthBee = beeRef.current.offsetWidth;
+    var widthMeo = meoRef.current.offsetWidth;
 
-    beeRef.current.style.transform = `translate(${targetX}px, ${targetY}px)`;
+    const rootElement = document.documentElement;
+    const rootFontSize = parseFloat(
+      window.getComputedStyle(rootElement).fontSize
+    );
+    const remInPixels = 0.625 * rootFontSize;
+
+    const targetXBee = targetRect.left - widthBee - remInPixels;
+    const targetYBee = targetRect.top - targetRect.height / 2 - widthBee / 2;
+
+    const targetXMeo = targetRect.left - widthMeo - remInPixels;
+    const targetYMeo = targetRect.top - targetRect.height / 2 - widthMeo / 2;
+
+    beeRef.current.style.transform = `translate(${targetXBee}px, ${targetYBee}px)`;
+    meoRef.current.style.transform = `translate(-${targetXMeo}px, ${targetYMeo}px)`;
 
     function bounce() {
       let up = true;
       bounceInterval = setInterval(() => {
         if (up) {
-          beeRef.current.style.transform = `translate(${targetX}px, ${
-            targetY - 60
+          beeRef.current.style.transform = `translate(${targetXBee}px, ${
+            targetYBee - 3.75 * rootFontSize
+          }px)`;
+          meoRef.current.style.transform = `translate(-${targetXMeo}px, ${
+            targetYMeo - 3.75 * rootFontSize
           }px)`;
         } else {
-          beeRef.current.style.transform = `translate(${targetX}px, ${targetY}px)`;
+          beeRef.current.style.transform = `translate(${targetXBee}px, ${targetYBee}px)`;
+          meoRef.current.style.transform = `translate(-${targetXMeo}px, ${targetYMeo}px)`;
         }
         up = !up;
       }, 800);
@@ -111,9 +131,10 @@ function Exam() {
         alt="Bee"
         className="bee"
         id="bee"
-      ></img>
+      />
+      <img ref={meoRef} src={meo} alt="Meo" className="meo" id="meo" />
 
-      <div className="video-container">
+      <div className="video-container" id="target-parent">
         <img className="content-bg" src={bg_video} alt="background video" />
         <div className="wrap-guide">
           <h3 className="guide">
