@@ -25,8 +25,8 @@ function Hard() {
         <div className='relative overflow-x-hidden text-white'>
             <div className="fixed z-[2] w-full flex justify-between items-center px-[3%]">
                 <a className="hidden-custom sm:block w-[24.984245%] max-w-[415px]" href="/">
-                    <button className="relative max-w-[330px]">
-                        <img alt="back" width="347" height="112" decoding="async" data-nimg="1" className="z-0 img-back" src={imgBack}/>
+                    <button className="relative w-full h-full">
+                        <img alt="back" width="347" height="112" decoding="async" data-nimg="1" className="z-0 img-back w-full" src={imgBack}/>
                         <div className="absolute inset-0 top-[14%] left-[50%] right-[16.5%] bottom-[42%] flex justify-center items-center">
                             <svg viewBox="0 0 100 33" xmlns="http://www.w3.org/2000/svg" className="w-full">
                                 <foreignObject width="100" height="33">
@@ -284,6 +284,10 @@ function Hard() {
                         </div>
                     </button>
                 </div>
+            </div>
+
+            <div className="relative w-[150%] -ml-[25%] sm:w-full sm:ml-0 main-content">
+                <img alt="map background" width="2880" height="3240" decoding="async" data-nimg="1" className="z-0 w-full" src={mapBackground}/>
             </div>
         </div>
     </div>
