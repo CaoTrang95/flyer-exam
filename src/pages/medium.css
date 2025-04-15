@@ -1,0 +1,33 @@
+img {
+    color: transparent;
+}
+
+.text-back {
+    font-size: 22px; 
+    line-height: 1.5;
+}
+
+.text-title {
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.text-random {
+    font-size: 14px; 
+    line-height: 1.5;
+}
+
+.main-content h2 {
+    font-size: 34px; 
+    line-height: 1;
+}
+
+.main-content p {
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.main-content span {
+    font-size: 12px; 
+    line-height: 1.2;
+}
