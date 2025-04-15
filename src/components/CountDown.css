@@ -13,3 +13,15 @@
 div.countdown:first-of-type {
   font-size: 1em;
 }
+
+@media only screen and (max-width: 44em) {
+  .countdown {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 29em) {
+  .countdown {
+    font-size: 0.6rem;
+  }
+}

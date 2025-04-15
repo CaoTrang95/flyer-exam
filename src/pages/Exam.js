@@ -18,7 +18,15 @@ import dino from "../assets/dino_cuted.mp4";
 import CountDown from "../components/CountDown";
 
 function Exam() {
-  const { questions, videoEnded, videoPaused, clickedControl, index, answer, dispatch } = useQuiz();
+  const {
+    questions,
+    videoEnded,
+    videoPaused,
+    clickedControl,
+    index,
+    answer,
+    dispatch,
+  } = useQuiz();
   const pauseTimes = questions.map((question) => question.time);
   const playerRef = useRef(null);
   const beeRef = useRef(null);
@@ -76,7 +84,9 @@ function Exam() {
     var widthMeo = meoRef.current.offsetWidth;
 
     const rootElement = document.documentElement;
-    const rootFontSize = parseFloat(window.getComputedStyle(rootElement).fontSize);
+    const rootFontSize = parseFloat(
+      window.getComputedStyle(rootElement).fontSize
+    );
     const remInPixels = 0.625 * rootFontSize;
 
     const targetXBee = targetRect.left - widthBee - remInPixels;
@@ -92,8 +102,12 @@ function Exam() {
       let up = true;
       bounceInterval = setInterval(() => {
         if (up) {
-          beeRef.current.style.transform = `translate(${targetXBee}px, ${targetYBee - 3.75 * rootFontSize}px)`;
-          meoRef.current.style.transform = `translate(-${targetXMeo}px, ${targetYMeo - 3.75 * rootFontSize}px)`;
+          beeRef.current.style.transform = `translate(${targetXBee}px, ${
+            targetYBee - 3.75 * rootFontSize
+          }px)`;
+          meoRef.current.style.transform = `translate(-${targetXMeo}px, ${
+            targetYMeo - 3.75 * rootFontSize
+          }px)`;
         } else {
           beeRef.current.style.transform = `translate(${targetXBee}px, ${targetYBee}px)`;
           meoRef.current.style.transform = `translate(-${targetXMeo}px, ${targetYMeo}px)`;
@@ -115,7 +129,13 @@ function Exam() {
       <img className="img-bg" src={bg} alt="background" />
       <img
         ref={beeRef}
-        src={`${!clickedControl ? bee_hi : clickedControl && !videoPaused ? bee_read : bee_choose}`}
+        src={`${
+          !clickedControl
+            ? bee_hi
+            : clickedControl && !videoPaused
+            ? bee_read
+            : bee_choose
+        }`}
         alt="Bee"
         className="bee"
         id="bee"
@@ -146,7 +166,11 @@ function Exam() {
               <img src={play_button} className="icon-play" alt="play button" />
             </div>
           )}
-          <div className={`overlay ${videoPaused && clickedControl ? "show-overlay" : ""}`} />
+          <div
+            className={`overlay ${
+              videoPaused && clickedControl ? "show-overlay" : ""
+            }`}
+          />
           <Quiz />
           {videoEnded && <Statistics onHandleReplay={handleReplay} />}
         </div>

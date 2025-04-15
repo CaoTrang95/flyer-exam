@@ -1,4 +1,4 @@
-button {
+.button-statistic {
   padding: var(--padding-button);
   font-weight: 500;
   background: #ddd;
@@ -14,7 +14,7 @@ button {
   align-items: center;
 }
 
-button:hover {
+.button-statistic:hover {
   background: #f0bfa3;
   transition: all 0.2s ease-in-out;
 }
