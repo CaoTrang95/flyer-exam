@@ -8,7 +8,7 @@
   pointer-events: none;
   transition: opacity 0.6s ease;
   z-index: 5;
-  overflow: hidden;
+  /* overflow: hidden; */
   border-radius: 1.25rem;
   width: var(--size-quiz-container);
 }

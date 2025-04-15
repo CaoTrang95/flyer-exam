@@ -7,16 +7,11 @@ import correctSound from "../assets/audio/wow.wav";
 
 const CheckboxGroup = ({ question }) => {
   return (
-    <div className="quiz-content">
+    <div className="quiz-content" id="target-quiz">
       <b>{question.question}</b>
       <div className="container-checkbox-group">
         {question.options.map((option, index) => (
-          <Checkbox
-            key={option}
-            value={option}
-            question={question}
-            indexCheckbox={index}
-          />
+          <Checkbox key={option} value={option} question={question} indexCheckbox={index} />
         ))}
       </div>
     </div>
@@ -52,15 +47,13 @@ const Checkbox = ({ question, value, indexCheckbox }) => {
       setCenterX(newCenterX);
       setCenterY(newCenterY);
 
-      const pTick = `M ${newCenterX / 2} ${newCenterX / 2} L ${
+      const pTick = `M ${newCenterX / 2} ${newCenterX / 2} L ${(3 * newCenterX) / 2} ${(3 * newCenterX) / 2} M ${
         (3 * newCenterX) / 2
-      } ${(3 * newCenterX) / 2} M ${(3 * newCenterX) / 2} ${newCenterX / 2} L ${
-        newCenterX / 2
-      } ${(3 * newCenterX) / 2}`;
+      } ${newCenterX / 2} L ${newCenterX / 2} ${(3 * newCenterX) / 2}`;
 
-      const pCross = `M ${newCenterX / 2} ${0.9 * newCenterX} L ${
-        0.9 * newCenterX
-      } ${1.3 * newCenterX} L ${1.7 * newCenterX} ${0.4 * newCenterX}`;
+      const pCross = `M ${newCenterX / 2} ${0.9 * newCenterX} L ${0.9 * newCenterX} ${1.3 * newCenterX} L ${
+        1.7 * newCenterX
+      } ${0.4 * newCenterX}`;
 
       setPathTick(pTick);
       setPathCross(pCross);
@@ -120,19 +113,11 @@ const Checkbox = ({ question, value, indexCheckbox }) => {
       onClick={(e) => handleOptionChange(e, indexCheckbox)}
     >
       <div className="image-box">
-        <img
-          className="image-answer"
-          alt="image-scarf"
-          src={question.options[indexCheckbox]}
-        ></img>
+        <img className="image-answer" alt="image-scarf" src={question.options[indexCheckbox]}></img>
         <p className="icon-answer">{indexToLetter(indexCheckbox)}</p>
       </div>
 
-      <div
-        id="checkBox"
-        className={`answer-box ${hasAnswered ? "no-click" : ""}`}
-        ref={parentCheckboxRef}
-      >
+      <div id="checkBox" className={`answer-box ${hasAnswered ? "no-click" : ""}`} ref={parentCheckboxRef}>
         <svg width={2 * centerX} height={2 * centerX}>
           <circle
             cx={centerX}
@@ -151,11 +136,7 @@ const Checkbox = ({ question, value, indexCheckbox }) => {
                 ? pathCross
                 : ""
             }
-            stroke={
-              answer !== question.correctAnswer && indexCheckbox === answer
-                ? "red"
-                : "#32CD32"
-            }
+            stroke={answer !== question.correctAnswer && indexCheckbox === answer ? "red" : "#32CD32"}
             strokeWidth={strokePath.current}
             fill="none"
             strokeDasharray="100"

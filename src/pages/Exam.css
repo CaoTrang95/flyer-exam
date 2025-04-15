@@ -69,21 +69,23 @@ div video {
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.5);
-  filter: blur(20px);
+  width: 80%;
+  height: 100%;
+  background-color: #fdfcfcc3;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
 
-.show {
+.show-overlay {
   opacity: 1;
   pointer-events: auto;
 }
+
+/* .show-overlay video {
+  opacity: 0.25;
+  pointer-events: auto;
+} */
 
 .play {
   position: absolute;
