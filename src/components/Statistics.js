@@ -4,7 +4,7 @@ import Button from "./Button";
 import "./Statistics.css";
 
 function Statistics({ onHandleReplay }) {
-  const { points, questions, dispatch } = useQuiz();
+  const { points, questions } = useQuiz();
   return (
     <div className="statistics">
       <h3>Quiz Completed</h3>
@@ -12,7 +12,7 @@ function Statistics({ onHandleReplay }) {
         Your Score: {points}/{questions.length}
       </p>
       <div className="group-buttons">
-        <Button onHandleClick={onHandleReplay}>Play again</Button>
+        <Button onHandleClick={onHandleReplay}>Learn again</Button>
         <Button>Next lesson</Button>
         <Button>Back home</Button>
       </div>

@@ -6,6 +6,11 @@ const StarExplosion = ({ children }) => {
   const [stars, setStars] = useState([]);
   let newStars;
 
+  const rootElement = document.documentElement;
+  const rootFontSize = parseFloat(
+    window.getComputedStyle(rootElement).fontSize
+  );
+
   const handleClick = (e) => {
     const { clientX, clientY } = e;
 
@@ -17,7 +22,9 @@ const StarExplosion = ({ children }) => {
         dx: Math.random() * 600 - 300,
         dy: Math.random() * 600 - 300,
         rotate: Math.random() * 360,
-        size: 30 + (index * (40 - 15)) / 4,
+        size:
+          1.875 * rootFontSize +
+          (index * (2.5 * rootFontSize - 0.9 * rootFontSize)) / 4,
       };
     });
     setStars((prev) => [...prev, ...newStars]);

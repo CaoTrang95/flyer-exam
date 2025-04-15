@@ -1,0 +1,15 @@
+.countdown {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 150%);
+  max-width: 54px;
+  min-width: 30px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.countdown:first-of-type {
+  font-size: 1em;
+}

@@ -1,33 +1,100 @@
 :root {
-  --size-title-guide: 1.25rem;
-  --size-question: 1.25rem;
+  --top-video-container: 50%;
+  --size-title-guide: 1.1rem;
+  --size-question: 1.2rem;
   --size-video-container: 70%;
   --size-quiz-container: 45%;
-  --size-gap: 3rem;
-  --size-statistics: 1.2rem;
-  --size-gap-statistics: 0.9rem;
-  --width-button: 8.75rem;
+  --bee-width: 6rem;
+  --play-button-size: 5rem;
+  --pading-answer: 0.0625rem 0.75rem;
+  --size-answer: 0.9rem;
+  --padding-guide: 3rem;
+  --margin-bottom-video: 5rem;
+  --gap-video-text-guide: 2rem;
+  --gap-button: 0.375rem;
+  --padding-button: 0.5rem 1.25rem;
+  --width-checkbox: 2.5rem;
+  --size-content-video: 100%;
+
+  --size-gap-statistics: 1rem;
+  --size-statistics: 1rem;
+  --width-button: 8rem;
   --padding-statistics: 1.8rem 2.5rem;
+
+  --gap-quiz-content: 1.625rem;
+  --gap-quize-images: 1rem;
+  --padding-quiz-content: 1.25rem;
 }
 
 html {
   font-family: "Open Sans", sans-serif;
 }
+
+/* < 1544 */
+@media only screen and (max-width: 96.5em) {
+  :root {
+    font-size: 90%;
+    --size-video-container: 75%;
+    --size-gap-statistics: 0.9rem;
+  }
+}
+
 /* BELOW 1344px (Smaller desktops) */
 @media only screen and (max-width: 84em) {
   :root {
+    font-size: 80%;
     --size-video-container: 80%;
-    --size-title-guide: 0.9rem;
-    --size-question: 0.9rem;
-    --size-statistics: 0.9rem;
     --padding-statistics: 1.1rem 2rem;
   }
 }
+
+/* BELOW 1044px */
+@media only screen and (max-width: 65.25em) {
+  :root {
+    font-size: 75%;
+    --top-video-container: 40%;
+    --bee-width: 5rem;
+  }
+}
+
 /* BELOW 864px */
 @media only screen and (max-width: 54em) {
   :root {
-    --size-statistics: 0.6rem;
+    font-size: 70%;
+    --size-video-container: 85%;
     --size-gap-statistics: 0.6rem;
-    --width-button: 5rem;
+    --width-button: 7.2rem;
+    --bee-width: 4.5rem;
+  }
+}
+
+/* BELOW 704px */
+@media only screen and (max-width: 44em) {
+  :root {
+    font-size: 60%;
+  }
+}
+
+/* BELOW 560px */
+@media only screen and (max-width: 35em) {
+  :root {
+    font-size: 50%;
+    --top-video-container: 30%;
+    --bee-width: 2.8rem;
+  }
+}
+
+/* BELOW 464px */
+@media only screen and (max-width: 29em) {
+  :root {
+    font-size: 45%;
+    --gap-quiz-content: 1.5rem;
+  }
+}
+
+/* BELOW 384px */
+@media only screen and (max-width: 24em) {
+  :root {
+    font-size: 40%;
   }
 }

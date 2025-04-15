@@ -45,10 +45,12 @@ function reducer(state, action) {
         ...state,
         answer: action.payload,
         videoPaused: true,
-        points:
-          action.payload === question.correctAnswer
-            ? state.points + 1
-            : state.points,
+        points: action.payload === question.correctAnswer ? state.points + 1 : state.points,
+      };
+    case "autoClickAnswer":
+      return {
+        ...state,
+        answer: action.payload,
       };
     case "pauseVideo":
       return {
@@ -81,19 +83,10 @@ function reducer(state, action) {
   }
 }
 function QuizProvider({ children }) {
-  const [
-    {
-      questions,
-      status,
-      index,
-      answer,
-      points,
-      videoEnded,
-      videoPaused,
-      clickedControl,
-    },
-    dispatch,
-  ] = useReducer(reducer, initialState);
+  const [{ questions, status, index, answer, points, videoEnded, videoPaused, clickedControl }, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
   const numQuestions = questions.length;
 
   useEffect(function () {
@@ -122,10 +115,7 @@ function QuizProvider({ children }) {
 
 function useQuiz() {
   const context = useContext(QuizContext);
-  if (context === undefined)
-    throw new Error(
-      "QuizContext was used outside of the QuizProvider component!"
-    );
+  if (context === undefined) throw new Error("QuizContext was used outside of the QuizProvider component!");
   return context;
 }
 

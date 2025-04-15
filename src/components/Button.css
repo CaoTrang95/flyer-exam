@@ -1,5 +1,5 @@
 button {
-  padding: 8px 20px;
+  padding: var(--padding-button);
   font-weight: 500;
   background: #ddd;
   border-radius: 15px;
@@ -9,6 +9,9 @@ button {
   cursor: pointer;
   z-index: 1000;
   width: var(--width-button);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button:hover {
