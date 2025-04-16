@@ -74,7 +74,7 @@ function Medium() {
                     <button className="absolute w-[11.715915%] top-[7.960857%] left-[24.074457%]" onClick={handleExam}>
                         <img alt="checkpoint" width="699" height="489" decoding="async" data-nimg="1" className="z-0" src={checkPoint}/>
                         <div className="absolute inset-0">
-                            <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[31.530973%] scale-[0.8] translate-y-[-8%]">
+                            <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[10%] scale-[0.8] translate-y-[-8%]">
                                 <foreignObject width="100" height="34">
                                     <h2 xmlns="http://www.w3.org/1999/xhtml" className="truncate block text-center font-bold text-[#000e41]">1</h2>
                                 </foreignObject>
@@ -97,7 +97,7 @@ function Medium() {
                         <img alt="checkpoint" width="699" height="489" decoding="async" data-nimg="1" className="z-0" src={checkPointDisable}/>
                         <div className="absolute inset-0">
                             <img alt="locked" loading="lazy" width="183" height="231" decoding="async" data-nimg="1" className="absolute z-[1] w-[28.105263%] right-[1%] top-0" src={lockedImg}/>
-                            <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[31.530973%] scale-[0.8] translate-y-[-8%]">
+                            <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[10%] scale-[0.8] translate-y-[-8%]">
                                 <foreignObject width="100" height="34">
                                     <h2 xmlns="http://www.w3.org/1999/xhtml" className="truncate block text-center font-bold text-[#000e41]">2</h2>
                                 </foreignObject>
@@ -121,7 +121,7 @@ function Medium() {
                         <img alt="checkpoint" width="699" height="489" decoding="async" data-nimg="1" className="z-0" src={checkPointDisable}/>
                         <div className="absolute inset-0">
                             <img alt="locked" loading="lazy" width="183" height="231" decoding="async" data-nimg="1" className="absolute z-[1] w-[28.105263%] right-[1%] top-0" src={lockedImg}/>
-                            <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[31.530973%] scale-[0.8] translate-y-[-8%]">
+                            <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[10%] scale-[0.8] translate-y-[-8%]">
                                 <foreignObject width="100" height="34">
                                     <h2 xmlns="http://www.w3.org/1999/xhtml" className="truncate block text-center font-bold text-[#000e41]">3</h2>
                                 </foreignObject>
@@ -145,7 +145,7 @@ function Medium() {
                         <img alt="checkpoint" width="699" height="489" decoding="async" data-nimg="1" className="z-0" src={checkPointDisable}/>
                         <div className="absolute inset-0">
                             <img alt="locked" loading="lazy" width="183" height="231" decoding="async" data-nimg="1" className="absolute z-[1] w-[28.105263%] right-[1%] top-0" src={lockedImg}/>
-                            <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[31.530973%] scale-[0.8] translate-y-[-8%]">
+                            <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[10%] scale-[0.8] translate-y-[-8%]">
                                 <foreignObject width="100" height="34">
                                     <h2 xmlns="http://www.w3.org/1999/xhtml" className="truncate block text-center font-bold text-[#000e41]">4</h2>
                                 </foreignObject>
@@ -169,7 +169,7 @@ function Medium() {
                         <img alt="checkpoint" width="699" height="489" decoding="async" data-nimg="1" className="z-0" src={checkPointDisable}/>
                         <div className="absolute inset-0">
                             <img alt="locked" loading="lazy" width="183" height="231" decoding="async" data-nimg="1" className="absolute z-[1] w-[28.105263%] right-[1%] top-0" src={lockedImg}/>
-                            <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[31.530973%] scale-[0.8] translate-y-[-8%]">
+                            <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[10%] scale-[0.8] translate-y-[-8%]">
                                 <foreignObject width="100" height="34">
                                     <h2 xmlns="http://www.w3.org/1999/xhtml" className="truncate block text-center font-bold text-[#000e41]">5</h2>
                                 </foreignObject>
@@ -193,7 +193,7 @@ function Medium() {
                         <img alt="checkpoint" width="699" height="489" decoding="async" data-nimg="1" className="z-0" src={checkPointDisable}/>
                         <div className="absolute inset-0">
                             <img alt="locked" loading="lazy" width="183" height="231" decoding="async" data-nimg="1" className="absolute z-[1] w-[28.105263%] right-[1%] top-0" src={lockedImg}/>
-                            <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[31.530973%] scale-[0.8] translate-y-[-8%]">
+                            <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[10%] scale-[0.8] translate-y-[-8%]">
                                 <foreignObject width="100" height="34">
                                     <h2 xmlns="http://www.w3.org/1999/xhtml" className="truncate block text-center font-bold text-[#000e41]">6</h2>
                                 </foreignObject>
@@ -217,7 +217,7 @@ function Medium() {
                         <img alt="checkpoint" width="699" height="489" decoding="async" data-nimg="1" className="z-0" src={checkPointDisable}/>
                         <div className="absolute inset-0">
                             <img alt="locked" loading="lazy" width="183" height="231" decoding="async" data-nimg="1" className="absolute z-[1] w-[28.105263%] right-[1%] top-0" src={lockedImg}/>
-                            <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[31.530973%] scale-[0.8] translate-y-[-8%]">
+                            <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[10%] scale-[0.8] translate-y-[-8%]">
                                 <foreignObject width="100" height="34">
                                     <h2 xmlns="http://www.w3.org/1999/xhtml" className="truncate block text-center font-bold text-[#000e41]">7</h2>
                                 </foreignObject>
@@ -241,7 +241,7 @@ function Medium() {
                         <img alt="checkpoint" width="699" height="489" decoding="async" data-nimg="1" className="z-0" src={checkPointDisable}/>
                         <div className="absolute inset-0">
                             <img alt="locked" loading="lazy" width="183" height="231" decoding="async" data-nimg="1" className="absolute z-[1] w-[28.105263%] right-[1%] top-0" src={lockedImg}/>
-                            <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[31.530973%] scale-[0.8] translate-y-[-8%]">
+                            <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[10%] scale-[0.8] translate-y-[-8%]">
                                 <foreignObject width="100" height="34">
                                     <h2 xmlns="http://www.w3.org/1999/xhtml" className="truncate block text-center font-bold text-[#000e41]">8</h2>
                                 </foreignObject>
@@ -264,7 +264,7 @@ function Medium() {
                     <button className="absolute w-[11.715915%] top-[86.29769%] left-[40.175801%]">
                         <img alt="checkpoint" width="699" height="489" decoding="async" data-nimg="1" className="z-0" src={checkPointDisable}/>
                         <img alt="locked" loading="lazy" width="183" height="231" decoding="async" data-nimg="1" className="absolute z-[1] w-[28.105263%] right-[1%] top-0" src={lockedImg}/>
-                        <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[31.530973%] scale-[0.8] translate-y-[-8%]">
+                        <svg viewBox="0 0 100 34" xmlns="http://www.w3.org/2000/svg" className="w-full absolute top-[10%] scale-[0.8] translate-y-[-8%]">
                             <foreignObject width="100" height="34">
                                 <h2 xmlns="http://www.w3.org/1999/xhtml" className="truncate block text-center font-bold text-[#000e41]">9</h2>
                             </foreignObject>
