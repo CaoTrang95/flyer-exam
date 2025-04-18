@@ -15,43 +15,42 @@ import bg_video from "../assets/images/bg_video_winter_red.webp";
 import play_button from "../assets/images/play-button.png";
 
 import dino from "../assets/dino_cuted.mp4";
-import CountDown from "../components/CountDown";
 
 function Exam() {
-  const {
-    questions,
-    videoEnded,
-    videoPaused,
-    clickedControl,
-    index,
-    answer,
-    dispatch,
-  } = useQuiz();
+  const { questions, videoEnded, videoPaused, clickedControl, index, answer, dispatch } = useQuiz();
   const pauseTimes = questions.map((question) => question.time);
   const playerRef = useRef(null);
   const beeRef = useRef(null);
   const meoRef = useRef(null);
+  const needShowOverlay = useRef(false);
   const [currentStopIndex, setCurrentStopIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (playerRef.current) {
-        const currentTime = playerRef.current.getCurrentTime();
-        const currentMs = currentTime * 1000;
+    let interval;
+    //video đang chạy mới setInterval
+    if (!videoPaused) {
+      interval = setInterval(() => {
+        if (playerRef.current) {
+          const currentTime = playerRef.current.getCurrentTime();
+          const currentMs = currentTime * 1000;
 
-        if (currentStopIndex < pauseTimes.length) {
-          const nextStop = pauseTimes[currentStopIndex];
+          if (currentStopIndex < pauseTimes.length) {
+            const nextStop = pauseTimes[currentStopIndex];
 
-          if (currentMs >= nextStop && !videoPaused) {
-            dispatch({ type: "pauseVideo" });
-            dispatch({ type: "showQuestion" });
-            const internalPlayer = playerRef.current.getInternalPlayer();
-            internalPlayer?.pause?.();
-            setCurrentStopIndex((prev) => prev + 1);
+            if (currentMs >= nextStop && currentMs - nextStop < 50) {
+              needShowOverlay.current = true;
+              dispatch({ type: "pauseVideo" });
+              dispatch({ type: "showQuestion" });
+              const internalPlayer = playerRef.current.getInternalPlayer();
+              internalPlayer?.pause?.();
+              setCurrentStopIndex((prev) => prev + 1);
+            } else {
+              needShowOverlay.current = false;
+            }
           }
         }
-      }
-    }, 50);
+      }, 50);
+    }
 
     return () => clearInterval(interval);
   }, [videoPaused, currentStopIndex]);
@@ -62,6 +61,10 @@ function Exam() {
 
   const handlePause = () => {
     dispatch({ type: "pauseVideo" });
+  };
+
+  const handlePlay = () => {
+    dispatch({ type: "playVideo" });
   };
 
   const handleClick = () => {
@@ -84,9 +87,7 @@ function Exam() {
     var widthMeo = meoRef.current.offsetWidth;
 
     const rootElement = document.documentElement;
-    const rootFontSize = parseFloat(
-      window.getComputedStyle(rootElement).fontSize
-    );
+    const rootFontSize = parseFloat(window.getComputedStyle(rootElement).fontSize);
     const remInPixels = 0.625 * rootFontSize;
 
     const targetXBee = targetRect.left - widthBee - remInPixels;
@@ -102,12 +103,8 @@ function Exam() {
       let up = true;
       bounceInterval = setInterval(() => {
         if (up) {
-          beeRef.current.style.transform = `translate(${targetXBee}px, ${
-            targetYBee - 3.75 * rootFontSize
-          }px)`;
-          meoRef.current.style.transform = `translate(-${targetXMeo}px, ${
-            targetYMeo - 3.75 * rootFontSize
-          }px)`;
+          beeRef.current.style.transform = `translate(${targetXBee}px, ${targetYBee - 3.75 * rootFontSize}px)`;
+          meoRef.current.style.transform = `translate(-${targetXMeo}px, ${targetYMeo - 3.75 * rootFontSize}px)`;
         } else {
           beeRef.current.style.transform = `translate(${targetXBee}px, ${targetYBee}px)`;
           meoRef.current.style.transform = `translate(-${targetXMeo}px, ${targetYMeo}px)`;
@@ -129,13 +126,7 @@ function Exam() {
       <img className="img-bg" src={bg} alt="background" />
       <img
         ref={beeRef}
-        src={`${
-          !clickedControl
-            ? bee_hi
-            : clickedControl && !videoPaused
-            ? bee_read
-            : bee_choose
-        }`}
+        src={`${!clickedControl ? bee_hi : clickedControl && !videoPaused ? bee_read : bee_choose}`}
         alt="Bee"
         className="bee"
         id="bee"
@@ -155,6 +146,7 @@ function Exam() {
             playing={!videoPaused}
             onEnded={handleVideoEnd}
             onPause={handlePause}
+            onPlay={handlePlay}
             controls={false}
             // onProgress={handleProgress}
             ref={playerRef}
@@ -168,10 +160,10 @@ function Exam() {
           )}
           <div
             className={`overlay ${
-              videoPaused && clickedControl ? "show-overlay" : ""
+              (videoPaused && clickedControl && needShowOverlay.current) || videoEnded ? "show-overlay" : ""
             }`}
           />
-          <Quiz />
+          <Quiz playerRef={playerRef} />
           {videoEnded && <Statistics onHandleReplay={handleReplay} />}
         </div>
       </div>
