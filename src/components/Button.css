@@ -12,9 +12,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #333;
 }
 
 .button-statistic:hover {
-  background: #f0bfa3;
+  background: #ed9666;
   transition: all 0.2s ease-in-out;
 }

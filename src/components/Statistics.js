@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useQuiz } from "../context/QuizContext";
 import Button from "./Button";
 import "./Statistics.css";
@@ -13,8 +14,12 @@ function Statistics({ onHandleReplay }) {
       </p>
       <div className="group-buttons">
         <Button onHandleClick={onHandleReplay}>Bắt đầu lại</Button>
-        <Button>Bài kế tiếp</Button>
-        <Button>Trang chủ</Button>
+        <Link to="/exam2">
+          <Button>Bài kế tiếp</Button>
+        </Link>
+        <Link to="/">
+          <Button>Trang chủ</Button>
+        </Link>
       </div>
     </div>
   );

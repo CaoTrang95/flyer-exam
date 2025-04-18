@@ -15,7 +15,7 @@
   position: absolute;
   top: var(--top-video-container);
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, calc(-1 * var(--top-video-container)));
 }
 
 .content-bg {
@@ -86,6 +86,24 @@ div video {
   opacity: 0.25;
   pointer-events: auto;
 } */
+
+.status-exam1 {
+  position: absolute;
+  top: var(--top-status-exam);
+  right: var(--right-status-exam);
+  background-color: #4caf50;
+  color: white;
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  z-index: 1000;
+}
+
+.show-exam1 {
+  opacity: 1;
+}
 
 .play {
   position: absolute;

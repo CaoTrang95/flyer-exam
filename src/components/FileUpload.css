@@ -1,0 +1,26 @@
+.file-upload-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+}
+
+.file-upload-button {
+  padding: var(--padding-button);
+  background-color: #ddd;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: var(--size-statistics);
+  transition: background-color 0.3s;
+}
+
+.file-upload-button:hover {
+  background-color: #ed9666;
+  transition: all 0.2s ease-in-out;
+}
+
+.file-name {
+  font-size: var(--size-statistics);
+  color: #2117e2;
+}
